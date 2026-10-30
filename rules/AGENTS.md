@@ -26,18 +26,23 @@ This rule set applies whenever the `agentic-obsidian-plugin` is active in an Ant
 ---
 
 ## 3. Cross-Plugin Integration & Handoff Protocols
-When `agentic-obsidian-plugin` is active, other plugins coordinate with `@coding-document`:
+When `agentic-obsidian-plugin` (or `agentic-document-plugin`) is active, other plugins coordinate with `@coding-document`:
 - **`agentic-coding-plugin` (`@coding`)**:
-  - **Pre-Merge Tidy Up**: Prior to executing the merge step (`coding-merge`), `@coding` invokes `@coding-document` to synchronize and tidy up feature specs, architecture diagrams, and READMEs.
-  - **Post-Merge Git Status Update**: Immediately after merging or PR creation, `@coding` invokes `@coding-document` to update git branch statuses, commit hashes, and release changelogs.
-- **`agentic-investigate-plugin` (`@coding-investigate` / `@investigate`)**:
-  - Upon concluding an issue diagnosis, `@investigate` invokes `@coding-document` to store the root cause analysis, evidence, and remediation plan into `agentic-obsidian/investigations/`.
-- **`agentic-research-plugin` (`@coding-research` / `@research`)**:
-  - Upon concluding research or report approval, `@research` invokes `@coding-document` to store or update findings, comparison matrices, and citations in `agentic-obsidian/research/`.
-- **`agentic-monitoring-plugin` (`@coding-monitor` / `@monitoring`)**:
-  - Upon concluding surveillance or handling an intervention gate, `@monitoring` invokes `@coding-document` to record telemetry logs, error anomalies, and remediation actions in `agentic-obsidian/monitoring/`.
+  - `@coding` invokes `@coding-document` to maintain documentation after each phase:
+    - **After Phase 1 (Clarify)**: Document clarified requirements and user interview notes.
+    - **After Phase 2 (Specify)**: Document and index approved `specification.md`.
+    - **After Phase 3 (Plan)**: Document implementation plans, architecture diagrams, and formalize ADRs.
+    - **After Phase 4 (Develop)**: Document code changes, implementation details, and test reports.
+    - **After Phase 5 (Review / Pre-Merge)**: Perform pre-merge documentation tidy-up across READMEs and specs.
+    - **After Phase 6 (Merge / Post-Merge)**: Update repository git statuses (`agentic-obsidian/git-status.md`), branch topologies, and release changelogs.
+- **`agentic-investigate-plugin` (`@coding-investigate`)**:
+  - Once the issue investigation is done, `@coding-investigate` invokes `@coding-document` to store the root cause analysis, evidence, and remediation assessment into `agentic-obsidian/investigations/`.
+- **`agentic-research-plugin` (`@coding-research`)**:
+  - Upon research report approval, `@coding-research` invokes `@coding-document` to record the research into `agentic-obsidian/research/`, creating a new topic/subject or updating an existing one.
+- **`agentic-monitoring-plugin` (`@coding-monitor`)**:
+  - At the end of monitoring, `@coding-monitor` invokes `@coding-document` to record telemetry logs, error anomalies, and remediation actions in `agentic-obsidian/monitoring/`.
 - **`agentic-triage-plugin`**:
-  - If `agentic-obsidian-plugin` is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
+  - If `agentic-obsidian-plugin` (or `agentic-document-plugin`) is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
 
 ---
 

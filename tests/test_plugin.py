@@ -96,7 +96,7 @@ def test_agent_catalog_exists():
     catalog_file = PLUGIN_ROOT / "agents" / "agent.md"
     assert catalog_file.exists(), "agents/agent.md catalog must exist"
     meta = parse_frontmatter(catalog_file)
-    assert meta.get("name") == "obsidian-catalog"
+    assert meta.get("name") in ("obsidian-catalog", "coding-obsidian-catalog")
     content = catalog_file.read_text(encoding="utf-8")
     assert "@coding-document" in content
 

@@ -24,29 +24,26 @@ The `document` skill orchestrates documentation generation, synchronization, and
 4. **Code Changes & Git Status Tracking**:
    - Documents branch states, commit history, dirty/clean status, and worktree allocations in `agentic-obsidian/git-status.md`.
 5. **Cross-Plugin Lifecycle Coordination**:
-   - Serves as the designated documentation worker for `@coding`, `@investigate`, `@research`, and `@monitoring`.
+   - Serves as the designated documentation worker for `@coding` (maintaining documentation after each phase), `@coding-investigate` (concluded issue assessments), `@coding-research` (creating/updating topics and subjects), and `@coding-monitor` (telemetry and session alerts).
 
 ---
 
 ## 2. Standard Workflows
 
-### Workflow A: Pre-Merge Documentation Tidy Up
-1. Inspect git diffs (`git diff origin/master...HEAD`) to identify all changes introduced in feature branches.
-2. Update relevant feature notes under `agentic-obsidian/features/`.
-3. Document any new architectural patterns or decisions in `agentic-obsidian/architecture/`.
-4. Update workspace or sub-repo `README.md` files.
+### Workflow A: After-Each-Phase Coding Workflow Maintenance
+1. **After Phase 1 (Clarify)**: Records clarified requirements, constraints, and user interview outcomes in feature notes.
+2. **After Phase 2 (Specify)**: Stores and indexes the approved `specification.md` into `agentic-obsidian/features/`.
+3. **After Phase 3 (Plan)**: Documents implementation plans, repository breakdowns, and formalizes ADRs under `agentic-obsidian/architecture/`.
+4. **After Phase 4 (Develop)**: Documents implementation notes, code modifications, and test execution reports.
+5. **After Phase 5 (Review / Pre-Merge)**: Performs pre-merge tidy-up across READMEs, architecture records, and feature notes.
+6. **After Phase 6 (Merge / Post-Merge)**: Updates repository git statuses (`agentic-obsidian/git-status.md`), branch topologies, and release changelogs.
 
-### Workflow B: Post-Merge Git Status & Changelog Update
-1. Check repository branches, active HEADs, and merge status across all repos (`git status`, `git branch -a`).
-2. Record updated branch status in `agentic-obsidian/git-status.md`.
-3. Append merged features and PR links to release notes.
+### Workflow B: Archiving Multi-Agent Deliverables
+- **From `@coding-investigate`**: Formats and stores root-cause analysis and approved `issue-assessment.md` into `agentic-obsidian/investigations/<issue-slug>.md`.
+- **From `@coding-research`**: Records approved research reports into `agentic-obsidian/research/`, creating a new topic/subject or updating an existing one, and updates `agentic-obsidian/research/index.md`.
+- **From `@coding-monitor`**: Documents telemetry metrics, observed streams, error alerts, and container surveillance logs into `agentic-obsidian/monitoring/<service-slug>.md`.
 
-### Workflow C: Archiving Multi-Agent Deliverables
-- **From `@investigate`**: Formats and stores the root-cause analysis and approved `issue-assessment.md` into `agentic-obsidian/investigations/<issue-slug>.md`.
-- **From `@research`**: Formats and indexes the approved `research-report.md` into `agentic-obsidian/research/requests/<topic-slug>.md`.
-- **From `@monitoring`**: Documents telemetry metrics, error alerts, and container surveillance logs into `agentic-obsidian/monitoring/<service-slug>.md`.
-
-### Workflow D: Session Syncing
+### Workflow C: Session Syncing
 - Invokes `python3 scripts/sync_sessions.py <session-id>` to sync transcripts and copy artifacts from `<appDataDir>/brain/<conversation-id>/` into `agentic-obsidian/sessions/`.
 
 ---

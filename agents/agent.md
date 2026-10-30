@@ -1,5 +1,5 @@
 ---
-name: obsidian-catalog
+name: coding-obsidian-catalog
 description: Architecture overview and catalog for the agentic-obsidian-plugin subagents.
 enable_write_tools: false
 enable_subagent_tools: false
@@ -47,13 +47,11 @@ agents/
 
 ### 3.2 Inter-Plugin Collaboration Pipeline
 ```text
-@coding (develop/review) ──(pre-merge)──> @coding-document (tidy docs & specs)
-                                                 │
-@coding (release/merge)  ──(post-merge)─> @coding-document (update git status & changelog)
-                                                 │
-@investigate             ──(concluded)──> @coding-document (archive investigation note)
-                                                 │
-@research                ──(concluded)──> @coding-document (archive research brief)
-                                                 │
-@monitoring              ──(concluded)──> @coding-document (record telemetry & alerts)
+@coding (after each phase)   ──> @coding-document (maintain specs, plans, progress, ADRs, git status)
+                                       │
+@coding-investigate (concluded) ──> @coding-document (archive investigation & root-cause analysis)
+                                       │
+@coding-research (concluded)    ──> @coding-document (record research report, create/update topic)
+                                       │
+@coding-monitor (concluded)     ──> @coding-document (record monitoring session, telemetry & alerts)
 ```

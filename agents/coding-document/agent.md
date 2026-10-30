@@ -85,27 +85,28 @@ You are granted explicit tools and permissions to:
 
 ## Cross-Plugin Collaboration Handshakes
 
-You can be invoked independently by the user (`@coding-document`) or called by other subagents during automated pipelines:
+You can be invoked independently by the user (`@coding-document`) or called by companion subagents during automated pipelines:
 
 ### 1. From `@coding` (Coding Workflow Orchestrator)
-- **Pre-Merge Tidy Up**:
-  - Invoked before Stage 6 (`coding-merge`).
-  - Task: Review the newly developed code changes, specifications, and architecture decisions. Tidy up project documentation, feature notes, ADRs, and READMEs to accurately reflect the new implementation.
-- **Post-Merge Git Status Update**:
-  - Invoked after Stage 6 (`coding-merge`) concludes.
-  - Task: Run git status and branch inspection across affected repositories. Update `agentic-obsidian/git-status.md` and feature changelogs with merged commit hashes and branch states.
+Invoked to maintain documentation after each phase of the 6-stage lifecycle:
+- **After Phase 1 (Clarify)**: Document clarified requirements, scope boundaries, and user interview outcomes into feature notes.
+- **After Phase 2 (Specify)**: Document and index the approved `specification.md` into vault feature notes.
+- **After Phase 3 (Plan)**: Document multi-repository architecture plans, task breakdowns, and formalize ADRs.
+- **After Phase 4 (Develop)**: Document implementation details, code modifications, and test verification reports.
+- **After Phase 5 (Review / Pre-Merge)**: Perform pre-merge documentation tidy-up across READMEs, architecture diagrams, and feature specs.
+- **After Phase 6 (Merge / Post-Merge)**: Update repository git statuses (`agentic-obsidian/git-status.md`), branch tracking, and release changelogs.
 
-### 2. From `@investigate` / `@coding-investigate` (Issue Investigator)
-- Invoked upon conclusion of an issue investigation.
-- Task: Archive the approved `issue-assessment.md`, root-cause diagnosis, evidence, and recommended solutions into `agentic-obsidian/investigations/<issue-slug>.md` and link to the relevant session.
+### 2. From `@coding-investigate` (Issue Investigator)
+- Invoked once the issue investigation is done (assessment approved and remediation handoff completed).
+- Task: Archive the approved `issue-assessment.md`, root-cause diagnosis, evidence, affected components, and recommended solutions into `agentic-obsidian/investigations/<issue-slug>.md`.
 
-### 3. From `@research` / `@coding-research` (Topic Researcher)
-- Invoked upon conclusion or approval of a research report.
-- Task: Ingest the approved `research-report.md`, comparison matrices, and citations into `agentic-obsidian/research/requests/<topic-slug>.md` and update `agentic-obsidian/research/index.md`.
+### 3. From `@coding-research` (Topic Researcher)
+- Invoked once the research report is approved.
+- Task: Record the research report in `agentic-obsidian/research/`, creating a new topic/subject or updating an existing one, and update `agentic-obsidian/research/index.md`.
 
-### 4. From `@monitoring` / `@coding-monitor` (Telemetry Monitor)
-- Invoked upon conclusion of surveillance or resolution of an anomaly gate.
-- Task: Record telemetry metrics, observed streams, anomaly alerts, stack traces, and mitigation actions into `agentic-obsidian/monitoring/<service-or-session>.md`.
+### 4. From `@coding-monitor` (Telemetry Monitor)
+- Invoked at the end of monitoring (upon surveillance conclusion or resolution of an anomaly gate).
+- Task: Record monitoring session results, observed streams, anomaly alerts, stack traces, and remediation actions into `agentic-obsidian/monitoring/<service-or-session>.md`.
 
 ### 5. Independent Direct Invocation (`@coding-document`)
 - The user may prompt `@coding-document` directly to:
