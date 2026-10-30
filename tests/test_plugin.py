@@ -116,7 +116,10 @@ def test_coding_document_agent_valid():
         assert t in tools, f"Tool {t} must be declared in agent tools"
 
     aliases = meta.get("aliases", [])
-    assert "coding-document" in aliases or "document" in aliases
+    assert "coding-document" in aliases
+    assert "document" not in aliases
+    for alias in aliases:
+        assert re.match(r"^coding(-.*)?$", alias), f"Alias '{alias}' does not match ^coding(-.*)?$"
 
     content = agent_file.read_text(encoding="utf-8")
     assert "Obsidian vault" in content
@@ -127,11 +130,14 @@ def test_coding_document_agent_valid():
     assert "git" in content
 
 
-def test_document_skill_valid():
-    skill_file = PLUGIN_ROOT / "skills" / "document" / "SKILL.md"
-    assert skill_file.exists(), "skills/document/SKILL.md must exist"
+def test_coding_document_skill_valid():
+    legacy_dir = PLUGIN_ROOT / "skills" / "document"
+    assert not legacy_dir.exists(), "Legacy skills/document directory must not exist"
+
+    skill_file = PLUGIN_ROOT / "skills" / "coding-document" / "SKILL.md"
+    assert skill_file.exists(), "skills/coding-document/SKILL.md must exist"
     meta = parse_frontmatter(skill_file)
-    assert meta.get("name") == "document"
+    assert meta.get("name") == "coding-document"
     assert "description" in meta
     content = skill_file.read_text(encoding="utf-8")
     assert "@coding-document" in content

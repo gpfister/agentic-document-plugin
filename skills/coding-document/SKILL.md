@@ -1,5 +1,5 @@
 ---
-name: document
+name: coding-document
 description: >-
   Autonomous Obsidian vault documentation skill for projects, architecture, features, code changes,
   git branch statuses, sessions, and artifacts.
@@ -7,7 +7,7 @@ description: >-
 
 # Obsidian Vault Documentation & Knowledge Curation (`@coding-document`)
 
-The `document` skill orchestrates documentation generation, synchronization, and archival into the workspace Obsidian vault (`agentic-obsidian/`). It is executed by the autonomous specialist agent **`@coding-document`**.
+The `coding-document` skill orchestrates documentation generation, synchronization, and archival into the workspace Obsidian vault (`agentic-obsidian/`). It is executed by the autonomous specialist agent **`@coding-document`**.
 
 ---
 

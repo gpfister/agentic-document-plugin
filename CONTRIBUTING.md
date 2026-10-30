@@ -26,7 +26,7 @@ agentic-obsidian-plugin/
 │   └── coding-document/# Autonomous documentation specialist (@coding-document)
 │       └── agent.md
 ├── skills/             # Progressive-disclosure skills
-│   └── document/       # Documentation & vault synchronization runbook
+│   └── coding-document/# Documentation & vault synchronization runbook
 │       └── SKILL.md
 ├── rules/              # Plugin-scoped rules
 │   └── AGENTS.md

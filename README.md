@@ -2,7 +2,7 @@
 
 The **`agentic-obsidian-plugin`** connects Google Antigravity to local Obsidian vaults (`agentic-obsidian/`) for centralized workspace documentation, session recording, artifact preservation, code change audits, and git status tracking.
 
-It introduces the autonomous subagent **`@coding-document`**, which can be invoked directly by users or called automatically by the other workspace plugins (`@coding`, `@investigate`, `@research`, `@monitoring`, `@triage`).
+It introduces the autonomous subagent **`@coding-document`**, which can be invoked directly by users or called automatically by companion workspace subagents (`@coding`, `@coding-investigate`, `@coding-research`, `@coding-monitor`).
 
 ---
 
@@ -14,10 +14,10 @@ It introduces the autonomous subagent **`@coding-document`**, which can be invok
 - **Git State Tracking**: Track branches, commits, worktrees, and dirty/clean status in `agentic-obsidian/git-status.md`.
 - **Autonomous Subagent (`@coding-document`)**: Independent documentation specialist with full read, write, git inspection, and subagent messaging permissions.
 - **Cross-Plugin Coordination**: Seamlessly integrated with:
-  - `agentic-coding-plugin`: Invoked prior to merge to tidy up documentation, and post-merge to update git status.
-  - `agentic-investigate-plugin`: Invoked at the conclusion of investigations to archive root-cause diagnoses.
-  - `agentic-research-plugin`: Invoked at the conclusion of research to index reports and citations.
-  - `agentic-monitoring-plugin`: Invoked at the conclusion of monitoring to record telemetry and alerts.
+  - `agentic-coding-plugin`: Invoked after each phase to maintain specs, plans, test notes, and git status.
+  - `agentic-investigate-plugin`: Invoked at the conclusion of investigations to archive root-cause diagnoses (`@coding-investigate`).
+  - `agentic-research-plugin`: Invoked at the conclusion of research to index reports and citations (`@coding-research`).
+  - `agentic-monitoring-plugin`: Invoked at the conclusion of monitoring to record telemetry and alerts (`@coding-monitor`).
   - `agentic-triage-plugin`: Dynamically evaluates whether incoming prompts are documentation requests and routes to `@coding-document`.
 
 ---
@@ -36,7 +36,7 @@ agentic-obsidian-plugin/
 │   └── coding-document/        # Autonomous Documentation Specialist
 │       └── agent.md
 ├── skills/
-│   └── document/               # Documentation runbook & workflows
+│   └── coding-document/        # Documentation runbook & workflows
 │       └── SKILL.md
 ├── rules/
 │   └── AGENTS.md               # Documentation standards & Obsidian vault rules

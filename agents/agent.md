@@ -17,7 +17,7 @@ This document defines the subagent architecture and catalog for the **`agentic-o
 
 ## 1. Architectural Overview
 
-The `agentic-obsidian-plugin` establishes the centralized knowledge base and documentation engine across the workspace using **Obsidian vaults** (`agentic-obsidian/`). It provides an autonomous specialist agent, **`@coding-document`**, capable of being invoked independently by users or programmatically by other pipeline subagents (`@coding`, `@investigate`, `@research`, `@monitoring`).
+The `agentic-obsidian-plugin` establishes the centralized knowledge base and documentation engine across the workspace using **Obsidian vaults** (`agentic-obsidian/`). It provides an autonomous specialist agent, **`@coding-document`**, capable of being invoked independently by users or programmatically by other pipeline subagents (`@coding`, `@coding-investigate`, `@coding-research`, `@coding-monitor`).
 
 ### Directory Structure
 ```text
