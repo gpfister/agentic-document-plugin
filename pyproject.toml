@@ -1,0 +1,18 @@
+[project]
+name = "agentic-obsidian-plugin"
+version = "0.1.0"
+description = "Antigravity Obsidian vault integration plugin documenting projects, architectures, features, code changes, git status, sessions, and artifacts via @coding-document."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.10.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

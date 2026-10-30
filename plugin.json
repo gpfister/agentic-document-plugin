@@ -1,0 +1,6 @@
+{
+  "name": "agentic-obsidian-plugin",
+  "version": "0.1.0",
+  "description": "Antigravity Obsidian vault integration plugin providing comprehensive project documentation, feature specs, architecture diagrams, session and artifact archival, and git status tracking via @coding-document.",
+  "license": "MIT"
+}
