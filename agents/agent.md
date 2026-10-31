@@ -1,6 +1,6 @@
 ---
 name: coding-obsidian-catalog
-description: Architecture overview and catalog for the agentic-obsidian-plugin subagents.
+description: Architecture overview and catalog for the agentic-document-plugin subagents.
 enable_write_tools: false
 enable_subagent_tools: false
 enable_mcp_tools: false
@@ -9,15 +9,15 @@ tools:
   - list_dir
 ---
 
-# Obsidian Vault Documentation Subagents & Architecture (`agents/agent.md`)
+# Coding - Obsidian Vault Documentation Subagents & Architecture (agents/agent.md)
 
-This document defines the subagent architecture and catalog for the **`agentic-obsidian-plugin`**.
+This document defines the subagent architecture and catalog for the **`agentic-document-plugin`**.
 
 ---
 
 ## 1. Architectural Overview
 
-The `agentic-obsidian-plugin` establishes the centralized knowledge base and documentation engine across the workspace using **Obsidian vaults** (`agentic-obsidian/`). It provides an autonomous specialist agent, **`@coding-document`**, capable of being invoked independently by users or programmatically by other pipeline subagents (`@coding`, `@coding-investigate`, `@coding-research`, `@coding-monitor`).
+The `agentic-document-plugin` establishes the centralized knowledge base and documentation engine across the workspace using **Obsidian vaults** (`agentic-obsidian/`). It provides an autonomous specialist agent, **`@coding-document`**, capable of being invoked independently by users or programmatically by other pipeline subagents (`@coding`, `@coding-investigate`, `@coding-research`, `@coding-monitor`).
 
 ### Directory Structure
 ```text
@@ -33,7 +33,7 @@ agents/
 
 | Agent Handle | Directory | `enable_write_tools` | `enable_subagent_tools` | `enable_mcp_tools` | Allowed Tools | Description |
 | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
-| **`@coding-document`** | [`agents/coding-document/`](file:///Users/gpfister/Development/Projects/gpfister/agentic/agentic-obsidian-plugin/agents/coding-document/) | `True` | `True` | `True` | `read_file`, `write_file`, `edit_file`, `list_dir`, `run_command`, `ask_question`, `send_message` | Autonomous documentation specialist documenting projects, features, architecture, sessions, artifacts, code changes, and git status in Obsidian vaults. |
+| **`@coding-document`** | [`agents/coding-document/`](file:///Users/gpfister/Development/Projects/gpfister/agentic/agentic-document-plugin/agents/coding-document/) | `True` | `True` | `True` | `read_file`, `write_file`, `edit_file`, `list_dir`, `run_command`, `ask_question`, `send_message` | Autonomous documentation specialist documenting projects, features, architecture, sessions, artifacts, code changes, and git status in Obsidian vaults. |
 
 ---
 

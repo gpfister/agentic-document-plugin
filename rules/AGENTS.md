@@ -1,6 +1,6 @@
-# Obsidian Vault Documentation Standards & Guidelines — agentic-obsidian-plugin
+# Obsidian Vault Documentation Standards & Guidelines — agentic-document-plugin
 
-This rule set applies whenever the `agentic-obsidian-plugin` is active in an Antigravity session.
+This rule set applies whenever the `agentic-document-plugin` is active in an Antigravity session.
 
 ---
 
@@ -26,7 +26,7 @@ This rule set applies whenever the `agentic-obsidian-plugin` is active in an Ant
 ---
 
 ## 3. Cross-Plugin Integration & Handoff Protocols
-When `agentic-obsidian-plugin` (or `agentic-document-plugin`) is active, other plugins coordinate with `@coding-document`:
+When `agentic-document-plugin` is active, other plugins coordinate with `@coding-document`:
 - **`agentic-coding-plugin` (`@coding`)**:
   - `@coding` invokes `@coding-document` to maintain documentation after each phase:
     - **After Phase 1 (Clarify)**: Document clarified requirements and user interview notes.
@@ -39,10 +39,10 @@ When `agentic-obsidian-plugin` (or `agentic-document-plugin`) is active, other p
   - Once the issue investigation is done, `@coding-investigate` invokes `@coding-document` to store the root cause analysis, evidence, and remediation assessment into `agentic-obsidian/investigations/`.
 - **`agentic-research-plugin` (`@coding-research`)**:
   - Upon research report approval, `@coding-research` invokes `@coding-document` to record the research into `agentic-obsidian/research/`, creating a new topic/subject or updating an existing one.
-- **`agentic-monitoring-plugin` (`@coding-monitor`)**:
+- **`agentic-monitor-plugin` (`@coding-monitor`)**:
   - At the end of monitoring, `@coding-monitor` invokes `@coding-document` to record telemetry logs, error anomalies, and remediation actions in `agentic-obsidian/monitoring/`.
 - **`agentic-triage-plugin`**:
-  - If `agentic-obsidian-plugin` (or `agentic-document-plugin`) is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
+  - If `agentic-document-plugin` is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
 
 ---
 
