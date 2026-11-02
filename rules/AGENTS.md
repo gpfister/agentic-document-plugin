@@ -1,6 +1,6 @@
-# Obsidian Vault Documentation Standards & Guidelines — agentic-document-plugin
+# Obsidian Vault Documentation Standards & Guidelines — agentic-project-documenting-plugin
 
-This rule set applies whenever the `agentic-document-plugin` is active in an Antigravity session.
+This rule set applies whenever the `agentic-project-documenting-plugin` is active in an Antigravity session.
 
 ---
 
@@ -26,7 +26,7 @@ This rule set applies whenever the `agentic-document-plugin` is active in an Ant
 ---
 
 ## 3. Cross-Plugin Integration & Handoff Protocols
-When `agentic-document-plugin` is active, other plugins coordinate with `@coding-document`:
+When `agentic-project-documenting-plugin` is active, other plugins coordinate with `@coding-document`:
 - **`agentic-coding-plugin` (`@coding`)**:
   - `@coding` invokes `@coding-document` to maintain documentation after each phase:
     - **After Phase 1 (Clarify)**: Document clarified requirements and user interview notes.
@@ -42,7 +42,7 @@ When `agentic-document-plugin` is active, other plugins coordinate with `@coding
 - **`agentic-monitor-plugin` (`@coding-monitor`)**:
   - At the end of monitoring, `@coding-monitor` invokes `@coding-document` to record telemetry logs, error anomalies, and remediation actions in `agentic-obsidian/monitoring/`.
 - **`agentic-triage-plugin`**:
-  - If `agentic-document-plugin` is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
+  - If `agentic-project-documenting-plugin` is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
 
 ---
 

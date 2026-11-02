@@ -1,4 +1,4 @@
-"""Tests for agentic-document-plugin structure and specifications."""
+"""Tests for agentic-project-documenting-plugin structure and specifications."""
 
 import json
 from pathlib import Path
@@ -42,7 +42,7 @@ def test_plugin_manifest_valid():
     manifest_file = PLUGIN_ROOT / "plugin.json"
     assert manifest_file.exists(), "plugin.json must exist"
     data = json.loads(manifest_file.read_text(encoding="utf-8"))
-    assert data.get("name") == "agentic-document-plugin"
+    assert data.get("name") == "agentic-project-documenting-plugin"
     assert data.get("version") == "0.1.0"
     assert data.get("license") == "MIT"
     assert "description" in data and len(data["description"]) > 0
@@ -52,7 +52,7 @@ def test_pyproject_valid():
     pyproject_file = PLUGIN_ROOT / "pyproject.toml"
     assert pyproject_file.exists(), "pyproject.toml must exist"
     content = pyproject_file.read_text(encoding="utf-8")
-    assert 'name = "agentic-document-plugin"' in content
+    assert 'name = "agentic-project-documenting-plugin"' in content
     assert 'version = "0.1.0"' in content
     assert 'requires-python = ">=3.11"' in content
     assert "pytest>=8.0.0" in content
@@ -70,7 +70,7 @@ def test_contributing_exists():
     contrib_file = PLUGIN_ROOT / "CONTRIBUTING.md"
     assert contrib_file.exists(), "CONTRIBUTING.md must exist"
     content = contrib_file.read_text(encoding="utf-8")
-    assert "agentic-document-plugin" in content
+    assert "agentic-project-documenting-plugin" in content
     assert "pytest" in content
 
 
@@ -78,7 +78,7 @@ def test_readme_exists():
     readme_file = PLUGIN_ROOT / "README.md"
     assert readme_file.exists(), "README.md must exist"
     content = readme_file.read_text(encoding="utf-8")
-    assert "agentic-document-plugin" in content
+    assert "agentic-project-documenting-plugin" in content
     assert "@coding-document" in content
     assert "agentic-obsidian/" in content
 

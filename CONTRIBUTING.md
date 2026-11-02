@@ -1,11 +1,11 @@
-# Contributing to agentic-document-plugin
+# Contributing to agentic-project-documenting-plugin
 
-Thank you for contributing to **`agentic-document-plugin`**! This plugin provides autonomous Obsidian vault documentation, session archival, artifact storage, and git status tracking capabilities for Google Antigravity.
+Thank you for contributing to **`agentic-project-documenting-plugin`**! This plugin provides autonomous Obsidian vault documentation, session archival, artifact storage, and git status tracking capabilities for Google Antigravity.
 
 ---
 
 ## 1. Core Guidelines
-- Adhere to the standards defined in [`rules/AGENTS.md`](file:///Users/gpfister/Development/Projects/gpfister/agentic/agentic-document-plugin/rules/AGENTS.md).
+- Adhere to the standards defined in [`rules/AGENTS.md`](file:///Users/gpfister/Development/Projects/gpfister/agentic/agentic-project-documenting-plugin/rules/AGENTS.md).
 - Keep subagent definitions modular, declarative, and isolated in `agents/<agent>/agent.md`.
 - Skills must include valid YAML frontmatter (`name`, `description`) matching the skill directory name.
 - Documentation agents operate safely within the Obsidian vault (`agentic-obsidian/`) and session directories, with appropriate permissions to inspect code changes, git status, and project architecture without making unauthorized destructive modifications.
@@ -15,7 +15,7 @@ Thank you for contributing to **`agentic-document-plugin`**! This plugin provide
 ## 2. Directory Structure
 
 ```text
-agentic-document-plugin/
+agentic-project-documenting-plugin/
 ├── plugin.json         # Plugin manifest
 ├── pyproject.toml      # Project metadata & test dependencies
 ├── README.md           # Documentation

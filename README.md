@@ -1,6 +1,6 @@
-# agentic-document-plugin
+# agentic-project-documenting-plugin
 
-The **`agentic-document-plugin`** connects Google Antigravity to local Obsidian vaults (`agentic-obsidian/`) for centralized workspace documentation, session recording, artifact preservation, code change audits, and git status tracking.
+The **`agentic-project-documenting-plugin`** connects Google Antigravity to local Obsidian vaults (`agentic-obsidian/`) for centralized workspace documentation, session recording, artifact preservation, code change audits, and git status tracking.
 
 It introduces the autonomous subagent **`@coding-document`**, which can be invoked directly by users or called automatically by companion workspace subagents (`@coding`, `@coding-investigate`, `@coding-research`, `@coding-monitor`).
 
@@ -25,7 +25,7 @@ It introduces the autonomous subagent **`@coding-document`**, which can be invok
 ## Directory Layout
 
 ```text
-agentic-document-plugin/
+agentic-project-documenting-plugin/
 ├── plugin.json                 # Plugin manifest
 ├── pyproject.toml              # Dependencies & pytest configuration
 ├── README.md                   # This overview
