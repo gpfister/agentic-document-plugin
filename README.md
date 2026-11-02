@@ -15,10 +15,10 @@ It introduces the autonomous subagent **`@coding-document`**, which can be invok
 - **Autonomous Subagent (`@coding-document`)**: Independent documentation specialist with full read, write, git inspection, and subagent messaging permissions.
 - **Cross-Plugin Coordination**: Seamlessly integrated with:
   - `agentic-coding-plugin`: Invoked after each phase to maintain specs, plans, test notes, and git status.
-  - `agentic-investigate-plugin`: Invoked at the conclusion of investigations to archive root-cause diagnoses (`@coding-investigate`).
-  - `agentic-research-plugin`: Invoked at the conclusion of research to index reports and citations (`@coding-research`).
-  - `agentic-monitor-plugin`: Invoked at the conclusion of monitoring to record telemetry and alerts (`@coding-monitor`).
-  - `agentic-triage-plugin`: Dynamically evaluates whether incoming prompts are documentation requests and routes to `@coding-document`.
+  - `agentic-issue-investigation-plugin`: Invoked at the conclusion of investigations to archive root-cause diagnoses (`@coding-investigate`).
+  - `agentic-topic-researching-plugin`: Invoked at the conclusion of research to index reports and citations (`@coding-research`).
+  - `agentic-task-monitoring-plugin`: Invoked at the conclusion of monitoring to record telemetry and alerts (`@coding-monitor`).
+  - `agentic-prompt-triage-plugin`: Dynamically evaluates whether incoming prompts are documentation requests and routes to `@coding-document`.
 
 ---
 

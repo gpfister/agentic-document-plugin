@@ -143,3 +143,23 @@ def test_coding_document_skill_valid():
     assert "description" in meta
     content = skill_file.read_text(encoding="utf-8")
     assert "@coding-document" in content
+
+
+def test_no_stale_companion_plugin_references():
+    stale_names = [
+        f"agentic-{part}-plugin"
+        for part in ["investigate", "monitor", "research", "triage"]
+    ]
+    md_files = list(PLUGIN_ROOT.glob("*.md")) + list(PLUGIN_ROOT.glob("*/**/*.md"))
+    for md_file in md_files:
+        content = md_file.read_text(encoding="utf-8")
+        for stale in stale_names:
+            assert stale not in content, f"Found stale plugin reference '{stale}' in {md_file.relative_to(PLUGIN_ROOT)}"
+
+    readme = (PLUGIN_ROOT / "README.md").read_text(encoding="utf-8")
+    assert "agentic-issue-investigation-plugin" in readme
+    assert "agentic-topic-researching-plugin" in readme
+    assert "agentic-task-monitoring-plugin" in readme
+    assert "agentic-prompt-triage-plugin" in readme
+
+

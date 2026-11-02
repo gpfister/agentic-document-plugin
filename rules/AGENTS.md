@@ -35,13 +35,13 @@ When `agentic-project-documenting-plugin` is active, other plugins coordinate wi
     - **After Phase 4 (Develop)**: Document code changes, implementation details, and test reports.
     - **After Phase 5 (Review / Pre-Merge)**: Perform pre-merge documentation tidy-up across READMEs and specs.
     - **After Phase 6 (Merge / Post-Merge)**: Update repository git statuses (`agentic-obsidian/git-status.md`), branch topologies, and release changelogs.
-- **`agentic-investigate-plugin` (`@coding-investigate`)**:
+- **`agentic-issue-investigation-plugin` (`@coding-investigate`)**:
   - Once the issue investigation is done, `@coding-investigate` invokes `@coding-document` to store the root cause analysis, evidence, and remediation assessment into `agentic-obsidian/investigations/`.
-- **`agentic-research-plugin` (`@coding-research`)**:
+- **`agentic-topic-researching-plugin` (`@coding-research`)**:
   - Upon research report approval, `@coding-research` invokes `@coding-document` to record the research into `agentic-obsidian/research/`, creating a new topic/subject or updating an existing one.
-- **`agentic-monitor-plugin` (`@coding-monitor`)**:
+- **`agentic-task-monitoring-plugin` (`@coding-monitor`)**:
   - At the end of monitoring, `@coding-monitor` invokes `@coding-document` to record telemetry logs, error anomalies, and remediation actions in `agentic-obsidian/monitoring/`.
-- **`agentic-triage-plugin`**:
+- **`agentic-prompt-triage-plugin`**:
   - If `agentic-project-documenting-plugin` is installed, dynamic triage classifies documentation requests and routes them directly to `@coding-document`.
 
 ---
